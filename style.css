@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: white;
+}
+
+/* Fondo corazones */
+#background {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+}
+
+.heart {
+    position: absolute;
+    bottom: -20px;
+    color: rgba(255,255,255,0.85);
+    animation: floatUp linear forwards;
+    pointer-events: none;
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-120vh) scale(1.6);
+        opacity: 0;
+    }
+}
+
+/* Tarjeta */
+.card {
+    position: relative;
+    z-index: 10;
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(8px);
+    padding: 45px 50px;
+    border-radius: 22px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    max-width: 420px;
+}
+
+/* Textos */
+.name {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+}
+
+.text {
+    font-size: 1.1rem;
+}
+
+.question {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.message {
+    height: 24px;
+    margin-bottom: 10px;
+}
+
+/* Botones */
+.buttons {
+    position: relative;
+    height: 90px;
+}
+
+button {
+    padding: 14px 34px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+.yes {
+    background: #ff4d6d;
+    color: white;
+    position: relative;
+    z-index: 5;
+}
+
+.no {
+    background: white;
+    color: #ff4d6d;
+    position: absolute;
+    right: 0;
+}
+
+/* Canvas fuegos */
+#fireworks {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 20;
+}
